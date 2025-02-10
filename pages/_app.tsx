@@ -1,5 +1,6 @@
 import App from 'next/app';
 import Head from 'next/head';
+import Script from 'next/script';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import Layout from '../components/layout';
