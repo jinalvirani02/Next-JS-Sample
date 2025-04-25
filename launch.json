@@ -9,16 +9,17 @@
             "x-powered-by": "launch"
           }
         }
-      },
-      {
-        "source": "/contact-us",
-        "destination": "https://contentstack.com/docs",
-        "statusCode": 307,
-        "response": {
-          "headers": {
-            "x-powered-by": "launch"
-          }
+      }
+    ],
+    "rewrites": [
+    {
+      "source": "/contact-us",
+      "destination": "/blog",
+      "response": {
+        "headers": {
+          "x-powered-by": "launch"
         }
       }
-    ]
+    }
+  ]
   }
