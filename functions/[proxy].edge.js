@@ -44,6 +44,10 @@ export default async function handler(request, context) {
             // Init Lytics
             jstag.init({
               src: 'https://staging.lytics.io/api/tag/2d7c177a7a955062fe9eeb90ff856cc3/latest.min.js',
+              consent: {
+                disabled: true,
+              }
+              jstag.optIn();
             });
             // Initial pageView
             jstag.pageView();
