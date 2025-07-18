@@ -1,7 +1,6 @@
 export default async function handler(request, context) {
   const redirectHosts = [
-    'https://nextjs-launch-challenge-eee898.devcontentstackapps.com',
-    'https://nextjs-app-router-csr.devcontentstackapps.com/'
+    'next-js-sample.devcontentstackapps.com',
   ];
 
   const url = new URL(request.url);
