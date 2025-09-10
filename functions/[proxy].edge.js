@@ -1,16 +1,18 @@
-export default async function handler(request, context) {
-  const redirectHosts = [
-    'next-js-sample.devcontentstackapps.com',
-  ];
+export default async function handler() {
+  try {
+    const response = await fetch(
+      'https://nextjs-launch-challenge-test.devcontentstackapps.com/api/test'
+    );
 
-  const url = new URL(request.url);
-  console.log(url.hostname, "1");
-  if (redirectHosts.includes(url.hostname)) {
-    url.hostname = 'https://consent-test.devcontentstackapps.com/';
-    return Response.redirect(url.toString(), 308); // permanent redirect
+    const data = await response.json();
+
+    // Log response in Edge logs
+    console.log('API response:', data);
+
+    // Return simple success response
+    return new Response('Logged API response', { status: 200 });
+  } catch (error) {
+    console.error('Error fetching API:', error);
+    return new Response('Error occurred', { status: 500 });
   }
-  console.log(url.hostname, "2");
-
-  // Continue with normal request
-  return fetch(request);
 }
